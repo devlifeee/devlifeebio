@@ -32,7 +32,7 @@ export default function App() {
         </section>
         <section className="model-stage" id="model" aria-label="Interactive 3D Model">
           <model-viewer
-            src="/models/assets/models/model.glb"
+            src={`${import.meta.env.BASE_URL}models/assets/models/model.glb`}
             alt="Мой 3D-персонаж"
             camera-controls 
             auto-rotate
