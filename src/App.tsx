@@ -64,13 +64,13 @@ export default function App() {
           <div className="section-label">03 / Character</div>
           <div className="model-heading">
             <h2 id="model-title">Meet the 3D version</h2>
-            <p>The model starts loading as you get closer to this section.</p>
+            <p>The model is loading in the background while you explore the page.</p>
           </div>
           <div className="model-stage" aria-label="Interactive 3D Model">
           <model-viewer
             src={`${import.meta.env.BASE_URL}models/assets/models/model.glb`}
             alt="Мой 3D-персонаж" 
-            loading="lazy"
+            loading="eager"
             camera-controls 
             auto-rotate
             auto-rotate-delay="0"
