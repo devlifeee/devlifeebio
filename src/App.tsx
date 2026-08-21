@@ -16,6 +16,7 @@ declare module 'react' {
         'min-camera-orbit'?: string
         'max-camera-orbit'?: string
         'interaction-prompt'?: string
+        poster?: string
         ar?: boolean
       }
     }
@@ -33,7 +34,8 @@ export default function App() {
         <section className="model-stage" id="model" aria-label="Interactive 3D Model">
           <model-viewer
             src={`${import.meta.env.BASE_URL}models/assets/models/model.glb`}
-            alt="Мой 3D-персонаж"
+            alt="Мой 3D-персонаж" 
+            poster={`${import.meta.env.BASE_URL}models/assets/models/model-poster.png`}
             camera-controls 
             auto-rotate
             auto-rotate-delay="0"
@@ -45,9 +47,7 @@ export default function App() {
             max-camera-orbit="auto 120deg 160%"
             interaction-prompt="auto"
             ar
-          >
-            <div className="loader" slot="poster">Загружаю 3D-модель…</div>
-          </model-viewer>
+          />
           <p className="hint">Потяни, чтобы повернуть</p>
         </section>
       </main>
