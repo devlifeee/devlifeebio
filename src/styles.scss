@@ -16,7 +16,7 @@ body {
 }
 
 .hero {
-  min-height: calc(100svh - 50px);
+  min-height: 100svh;
   max-width: 1280px;
   margin: auto;
   padding: clamp(2rem, 5vw, 5rem);
@@ -42,6 +42,84 @@ h1 {
 
 .description { max-width: 29rem; color: #64736a; line-height: 1.75; margin: 1.8rem 0 2.4rem; }
 
+.content {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+}
+
+.about-section,
+.achievements-section,
+.model-section {
+  padding: clamp(5rem, 12vw, 10rem) 0;
+  border-top: 1px solid #dce8e0;
+}
+
+.section-label {
+  color: #5c8069;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 2.2rem;
+}
+
+h2 {
+  color: #18352b;
+  font-family: Unbounded, Arial, sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+  margin: 0;
+}
+
+.about-grid,
+.achievements-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) 1.2fr;
+  gap: clamp(2rem, 7vw, 8rem);
+}
+
+.about-copy {
+  max-width: 39rem;
+  color: #53645a;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+
+  p { margin: 0 0 1.4rem; }
+  strong { color: #18352b; }
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(7rem, .35fr) 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid #dce8e0;
+    color: #18352b;
+  }
+
+  span { color: #8ca596; font-size: .75rem; }
+  strong { font-size: .95rem; }
+  p { color: #64736a; line-height: 1.5; margin: 0; }
+}
+
+.model-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 1rem;
+
+  p { max-width: 18rem; color: #64736a; line-height: 1.6; margin: 0; }
+}
+
 .button {
   display: inline-block;
   color: #ffffff;
@@ -57,7 +135,7 @@ h1 {
 
 .model-stage {
   position: relative;
-  min-height: min(90vw, 800px);
+  min-height: min(90vw, 760px);
   display: grid;
   place-items: center;
   isolation: isolate;
@@ -65,7 +143,7 @@ h1 {
 
 model-viewer {
   width: min(100%, 800px);
-  height: min(78vw, 900px);
+  height: min(78vw, 820px);
   z-index: 1;
   --poster-color: #ffffff;
 }
@@ -75,10 +153,16 @@ model-viewer {
 footer { text-align: center; color: #91a097; font-size: .78rem; padding: 1rem 2rem 1.8rem; }
 
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding: 2rem 1.5rem 0; }
+  .hero { grid-template-columns: 1fr; min-height: 100svh; padding: 2rem 1.5rem; }
   .intro { text-align: center; }
   .description { margin: 1.4rem auto 2rem; }
-  .model-stage { min-height: 105vw; margin-top: -1.4rem; }
+  .about-grid,
+  .achievements-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .model-heading { display: block; }
+  .model-heading p { margin-top: 1rem; }
+  .achievement-list li { grid-template-columns: 2rem 1fr; gap: .5rem .8rem; }
+  .achievement-list p { grid-column: 2; }
+  .model-stage { min-height: 105vw; margin-top: 2rem; }
 
   model-viewer {
     width: 100%;
