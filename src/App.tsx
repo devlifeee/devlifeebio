@@ -17,6 +17,7 @@ declare module 'react' {
         'max-camera-orbit'?: string
         'interaction-prompt'?: string
         poster?: string
+        loading?: string
         ar?: boolean
       }
     }
@@ -36,6 +37,7 @@ export default function App() {
             src={`${import.meta.env.BASE_URL}models/assets/models/model.glb`}
             alt="Мой 3D-персонаж" 
             poster={`${import.meta.env.BASE_URL}models/assets/models/model-poster.png`}
+            loading="eager"
             camera-controls 
             auto-rotate
             auto-rotate-delay="0"
